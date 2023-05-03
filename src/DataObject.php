@@ -1,6 +1,6 @@
 <?php
 
-namespace Programm011\DataObjects;
+namespace Programm011\DataObject;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;

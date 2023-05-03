@@ -1,6 +1,6 @@
 <?php
 
-namespace Programm011\DataObjects;
+namespace Programm011\DataObject;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;

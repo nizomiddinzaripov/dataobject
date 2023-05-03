@@ -1,6 +1,6 @@
 <?php
 
-namespace Programm011\DataObject;
+namespace Programm011\Dataobject;
 
 use Illuminate\Http\Request;
 

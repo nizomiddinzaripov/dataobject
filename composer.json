@@ -1,0 +1,18 @@
+{
+    "name": "programm011/dataobject",
+    "type": "library",
+    "version": "1.0",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Programm011\\Dataobject\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "programm011",
+            "email": "programm011@gmail.com"
+        }
+    ],
+    "require": {}
+}

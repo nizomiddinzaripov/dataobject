@@ -37,7 +37,7 @@ abstract class DataObject
 
             foreach ($fields as $field => $validator) {
                 $typeName = $validator->getType()->getName();
-                if (!$validator->getType()->isBuiltin()) {
+                if (isset($parameters[$field]) && !$validator->getType()->isBuiltin()) {
                     $dataObject = new $typeName;
                     if ($dataObject instanceof DataObject) {
                         if (is_array($parameters[$field])) {

@@ -36,7 +36,19 @@ abstract class DataObject
             }
 
             foreach ($fields as $field => $validator) {
-                $value = ($parameters[$field] ?? $parameters[Str::snake($field)] ?? $validator->getDefaultValue() ?? $instance->{$field} ?? null);
+                $typeName = $validator->getType()->getName();
+                if (!$validator->getType()->isBuiltin()) {
+                    $dataObject = new $typeName;
+                    if ($dataObject instanceof DataObject) {
+                        if (is_array($parameters[$field])) {
+                            $value = $dataObject::createFromArray($parameters[$field]);
+                        } else {
+                            $value = $dataObject::createFromModel($parameters[$field]);
+                        }
+                    }
+                } else {
+                    $value = ($parameters[$field] ?? $parameters[Str::snake($field)] ?? $validator->getDefaultValue() ?? $instance->{$field} ?? null);
+                }
 
                 $instance->{$field} = $value;
 

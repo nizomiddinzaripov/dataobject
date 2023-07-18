@@ -65,7 +65,7 @@ abstract class DataObject
      *
      * @return static
      */
-    public static function createFromModel(Model $model): static
+    public static function createFromModel(Model|\Illuminate\Support\Collection $model): static
     {
         return static::createFromArray($model->toArray());
     }
